@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTIFICIAL SUN POWER - Fusion Energy Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #0066cc;
+            --secondary: #00aaff;
+            --accent: #ffcc00;
+            --dark: #001a33;
+            --light: #e6f7ff;
+            --gray: #f0f8ff;
+            --text: #333;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark), #003366);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header styles */
+        header {
+            background: rgba(0, 10, 30, 0.9);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, var(--accent), #ff9900);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(255, 204, 0, 0.6); }
+            50% { box-shadow: 0 0 30px rgba(255, 204, 0, 0.9); }
+            100% { box-shadow: 0 0 15px rgba(255, 204, 0, 0.6); }
+        }
+
+        .logo-icon i {
+            font-size: 2rem;
+            color: var(--dark);
+        }
+
+        .logo-text {
+            text-transform: uppercase;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to right, var(--accent), #ffcc66);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .phone {
+            font-size: 1rem;
+        }
+
+        .phone p:first-child {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .phone p:last-child {
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Navigation styles */
+        nav {
+            background: rgba(0, 30, 60, 0.9);
+            margin-top: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background: rgba(0, 100, 200, 0.3);
+        }
+
+        .nav-links a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Hero section styles */
+        .hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 20, 40, 0.8), rgba(0, 20, 40, 0.8)), 
+                        url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            padding: 20px;
+            max-width: 700px;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            color: white;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero h3 {
+            color: var(--accent);
+            font-size: 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            color: #eee;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent), #ff9900);
+            color: var(--dark);
+            padding: 12px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #ffcc00, #ffaa00);
+        }
+
+        /* Content section styles */
+        .content-section {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+        }
+
+        .welcome-section {
+            grid-column: span 5;
+            padding: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 102, 204, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .welcome-content p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            background: var(--gray);
+            transform: translateX(5px);
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .feature-item span {
+            font-size: 0.95rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .solutions-section {
+            grid-column: span 7;
+            padding: 20px;
+        }
+
+        .bulb-icon {
+            background: linear-gradient(135deg, var(--accent), #ff9900);
+        }
+
+        .solution-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .solution-card {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.2);
+        }
+
+        .card-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .card-content h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .read-more:hover {
+            color: var(--secondary);
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Benefits section */
+        .benefits-section {
+            background: linear-gradient(135deg, var(--dark), #002b5c);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .section-title-center {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title-center::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .benefit-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Stats section */
+        .stats-section {
+            background: linear-gradient(rgba(0, 30, 60, 0.9), rgba(0, 30, 60, 0.9)), 
+                        url('https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            padding: 25px;
+            background: rgba(0, 50, 100, 0.5);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 150, 255, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: var(--dark);
+            padding: 60px 0 20px;
+            color: #ccc;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-col p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .footer-col ul li a i {
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .newsletter-form {
+            margin-top: 20px;
+        }
+
+        .email-input {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .email-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .email-input input::placeholder {
+            color: #aaa;
+        }
+
+        .email-input button {
+            padding: 0 20px;
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .email-input button:hover {
+            background: #ffcc33;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .welcome-section, .solutions-section {
+                grid-column: span 12;
+            }
+
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 450px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h3 {
+                font-size: 1.6rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            margin-top: 10px;
+            color: #fff;
+            font-weight: 600;
+            background: linear-gradient(90deg, #ffcc00, #ff9900);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+            
+            .solution-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h3 {
+                font-size: 1.3rem;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>ARTIFICIAL SUN POWER</h1>
+                    <p>FUSION ENERGY SOLUTIONS</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone-alt"></i>
+                <div class="phone">
+                    <p>CALL FREE</p>
+                    <p>(888) 55-FUSION</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <button class="mobile-menu-btn">☰ Menu</button>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#"><i class="fas fa-flask"></i> Research</a></li>
+                <li><a href="#"><i class="fas fa-cogs"></i> Technology</a></li>
+                <li><a href="#"><i class="fas fa-bolt"></i> Solutions</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Impact</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>HARNESSING THE POWER OF THE SUN</h2>
+            <h3>ON EARTH</h3>
+            <p>We're pioneering fusion energy technology to provide clean, limitless power for future generations. Our breakthrough approaches bring commercially viable fusion energy closer than ever before.</p>
+            <a href="#" class="btn">Explore Our Technology</a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container content-grid">
+            <div class="welcome-section">
+                <div class="section-header">
+                    <div class="icon-circle"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="section-title">Fusion Energy Revolution</h3>
+                </div>
+                <div class="welcome-content">
+                    <p>At Artificial Sun Power, we're leading the charge in developing commercially viable fusion energy solutions. Our cutting-edge technology replicates the process that powers the sun, creating a clean, safe, and virtually limitless energy source.</p>
+                    <p>With over 15 years of research and development, our team of world-class scientists and engineers has achieved breakthrough milestones that bring fusion energy from theory to reality.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Zero carbon emissions</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Inherently safe operation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Abundant fuel supply</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>High energy density</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Minimal radioactive waste</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 baseload power</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="read-more">Learn more about our approach <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="solutions-section">
+                <div class="section-header">
+                    <div class="icon-circle bulb-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 class="section-title">Technology Innovations</h3>
+                </div>
+                <div class="solution-cards">
+                    <div class="solution-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                        <div class="card-content">
+                            <h4>Advanced Magnetic Confinement</h4>
+                            <p>Our proprietary superconducting magnets create the strongest containment fields ever achieved, enabling stable plasma conditions for sustained fusion reactions.</p>
+                            <a href="#" class="read-more">View technology details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="solution-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                        <div class="card-content">
+                            <h4>Laser Ignition Systems</h4>
+                            <p>Our high-energy laser arrays deliver precise energy pulses to initiate fusion reactions with unprecedented efficiency and control.</p>
+                            <a href="#" class="read-more">View technology details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="solution-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                        <div class="card-content">
+                            <h4>Heat Conversion Technology</h4>
+                            <p>Our advanced thermal conversion systems capture fusion energy with over 60% efficiency, transforming plasma heat into usable electricity.</p>
+                            <a href="#" class="read-more">View technology details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="solution-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                        <div class="card-content">
+                            <h4>Fuel Harvesting Solutions</h4>
+                            <p>Our innovative extraction technology makes fusion fuel abundant and affordable by harvesting deuterium from seawater and producing tritium sustainably.</p>
+                            <a href="#" class="read-more">View technology details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h3 class="section-title-center">Why Fusion Energy?</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h4>Limitless Energy</h4>
+                    <p>Fusion fuel is virtually inexhaustible, with enough deuterium in seawater to power civilization for billions of years.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Zero Emissions</h4>
+                    <p>Fusion produces no greenhouse gases or air pollution, making it the ultimate clean energy solution.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Inherent Safety</h4>
+                    <p>Fusion reactions can't run away - any disturbance causes the plasma to cool and the reaction to stop naturally.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h4>Baseload Power</h4>
+                    <p>Fusion provides consistent, reliable power 24/7 regardless of weather conditions or time of day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h3 class="section-title-center">Our Progress</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years of Research</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200M°C</div>
+                    <div class="stat-label">Plasma Temperature</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">Energy Efficiency</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Patents Filed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About ASP</h4>
+                    <p>Artificial Sun Power is the world leader in developing commercial fusion energy technology. Our mission is to deliver clean, abundant, and affordable energy for all.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Company Overview</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Research & Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Technology Portfolio</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Career Opportunities</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Fusion Research Park, Palo Alto, CA</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> (888) 55-FUSION</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@artificialsunpower.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM PST</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive updates on our latest breakthroughs and technology developments.</p>
+                    <div class="newsletter-form">
+                        <div class="email-input">
+                            <input type="email" placeholder="Your email address">
+                            <button><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Artificial Sun Power. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = navLinks.contains(event.target);
+                const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnMenuBtn && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+            
+            // Resize handler to ensure menu displays correctly when window size changes
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
